@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="page__conten">
+      <header className="header">
+        <img
+          src="./imagens/logo.png"
+          alt="imagem da logo"
+          className="header__logo"
+        />
+      </header>
+
+      <main className="content">
+        <section className="profile">
+          <div className="profile__avatar-container">
+            <img
+              src="./imagens/image.logo.jpeg"
+              alt="Foto de Jacques Cousteau"
+              className="profile__avatar"
+            />
+            <img
+              src="./imagens/caneta.png"
+              alt="Editar o avatar"
+              className="profile__avatar-icon"
+            />
+          </div>
+          <div className="profile__info">
+            <span className="profile__name">Jacques Cousteau</span>
+            <span className="profile__title">Explorador</span>
+          </div>
+          <button className="profile__edit-button">
+            <img
+              src="./imagens/caneta.png"
+              alt="imagem de um botão"
+              className="profile__edit-caneta"
+            />
+          </button>
+          <button className="profile__action-button">
+            <img
+              src="./imagens/Vector(1).png"
+              alt="imagem de um vector"
+              className="profile__action-vector"
+            />
+          </button>
+        </section>
+        <section className="elements"></section>
+      </main>
+      <footer className="footer">
+        <p className="footer__copyright">&copy; 2025 Marcela Moura</p>
+      </footer>
+            </div>
+      
+  );
 }
 
-export default App
+export default App;
+    
