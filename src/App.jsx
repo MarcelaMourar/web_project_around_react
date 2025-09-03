@@ -1,12 +1,16 @@
-import './App.css'
+import logo from "./images/logo.png";
+import imageLogo from "./images/image.logo.jpeg";
+import caneta from "./images/caneta.png";
+import vector from "./images/Vector(1).png";
+
 
 function App() {
   
   return (
-    <div className="page__conten">
+    <div className="page__content">
       <header className="header">
         <img
-          src="./imagens/logo.png"
+          src={logo}
           alt="imagem da logo"
           className="header__logo"
         />
@@ -16,12 +20,12 @@ function App() {
         <section className="profile">
           <div className="profile__avatar-container">
             <img
-              src="./imagens/image.logo.jpeg"
+              src={imageLogo}
               alt="Foto de Jacques Cousteau"
               className="profile__avatar"
             />
             <img
-              src="./imagens/caneta.png"
+              src={caneta}
               alt="Editar o avatar"
               className="profile__avatar-icon"
             />
@@ -32,14 +36,14 @@ function App() {
           </div>
           <button className="profile__edit-button">
             <img
-              src="./imagens/caneta.png"
+              src={caneta}
               alt="imagem de um botão"
               className="profile__edit-caneta"
             />
           </button>
           <button className="profile__action-button">
             <img
-              src="./imagens/Vector(1).png"
+              src={vector}
               alt="imagem de um vector"
               className="profile__action-vector"
             />
