@@ -4,6 +4,10 @@ import NewCard from "./components/Popup/components/NewCard/NewCard";
 import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
 import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
 
+import imageLogo from "../../images/image.logo.jpeg";
+import caneta from "../../images/caneta.png";
+import vector from "../../images/Vector(1).png";
+
 export default function Main() {
   const [popup, setPopup] = useState(null);
 
@@ -20,31 +24,53 @@ export default function Main() {
   }
 
   return (
-    <main>
-      <button
-        className="profile__add-button"
-        type="button"
-        onClick={() => handleOpenPopup(newCardPopup)}
-      >
-        Novo Card
-      </button>
+    <main className="content">
+        <section className="profile">
+        <div className="profile__avatar-container">
+          <img
+            src={imageLogo}
+            alt="Foto de Jacques Cousteau"
+            className="profile__avatar"
+          />
+          <img
+            src={caneta}
+            alt="Editar o avatar"
+            className="profile__avatar-icon"
+            onClick={() => handleOpenPopup(editAvatarPopup)}
+          />
+        </div>
 
-      <button
-        className="profile__edit-button"
-        type="button"
-        onClick={() => handleOpenPopup(editProfilePopup)}
-      >
-        Editar Perfil
-      </button>
+        <div className="profile__info">
+          <span className="profile__name">Jacques Cousteau</span>
+          <span className="profile__title">Explorador</span>
+        </div>
 
-      <button
-        className="profile__avatar-button"
-        type="button"
-        onClick={() => handleOpenPopup(editAvatarPopup)}
-      >
-        Alterar Avatar
-      </button>
+        <button
+          className="profile__edit-button"
+          onClick={() => handleOpenPopup(editProfilePopup)}
+        >
+          <img
+            src={caneta}
+            alt="imagem de um botão"
+            className="profile__edit-caneta"
+          />
+        </button>
 
+        <button
+          className="profile__action-button"
+          onClick={() => handleOpenPopup(newCardPopup)}
+        >
+          <img
+            src={vector}
+            alt="imagem de um vector"
+            className="profile__action-vector"
+          />
+        </button>
+      </section>
+
+          <section className="elements"></section>
+
+      
       {popup && (
         <Popup onClose={handleClosePopup} title={popup.title}>
           {popup.children}
