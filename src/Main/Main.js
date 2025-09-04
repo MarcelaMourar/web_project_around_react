@@ -1,22 +1,10 @@
-import logo from "./images/logo.png";
-import imageLogo from "./images/image.logo.jpeg";
-import caneta from "./images/caneta.png";
-import vector from "./images/Vector(1).png";
+import imageLogo from "../../images/image.logo.jpeg";
+import caneta from "../../images/caneta.png";
+import vector from "../../images/Vector(1).png";
 
-
-function App() {
-  
-  return (
-    <div className="page__content">
-      <header className="header">
-        <img
-          src={logo}
-          alt="imagem da logo"
-          className="header__logo"
-        />
-      </header>
-
-      <main className="content">
+function Main() {
+    return (
+        <main className="content">
         <section className="profile">
           <div className="profile__avatar-container">
             <img
@@ -51,13 +39,7 @@ function App() {
         </section>
         <section className="elements"></section>
       </main>
-      <footer className="footer">
-        <p className="footer__copyright">&copy; 2025 Marcela Moura</p>
-      </footer>
-            </div>
-      
-  );
+    );
 }
 
-export default App;
-    
+export default Main;
