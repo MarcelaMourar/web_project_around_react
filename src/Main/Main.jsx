@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Popup from "./components/Popup/Popup";
-import NewCard from "./components/Popup/components/NewCard/NewCard";
-import EditProfile from "./components/Popup/components/EditProfile/EditProfile";
-import EditAvatar from "./components/Popup/components/EditAvatar/EditAvatar";
+import NewCard from "./components/Popup/NewCard/NewCard";
+import EditProfile from "./components/Popup/EditProfile/EditProfile";
+import EditAvatar from "./components/Popup/EditAvatar/EditAvatar";
 
-import imageLogo from "../../images/image.logo.jpeg";
-import caneta from "../../images/caneta.png";
-import vector from "../../images/Vector(1).png";
+import imageLogo from "../../src/images/image.logo.jpeg";
+import caneta from "../../src/images/caneta.png";
+import vector from "../../src/images/Vector(1).png";
 
 export default function Main() {
   const [popup, setPopup] = useState(null);
