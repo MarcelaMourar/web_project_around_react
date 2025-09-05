@@ -10,7 +10,9 @@
   bottom: 0;
   left: 0;
   z-index: 10;
+
 }
+
 
 .popup__title {
   font-weight: 900;
