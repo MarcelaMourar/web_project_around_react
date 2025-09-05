@@ -1,10 +1,16 @@
-export default function Card(props) {
-  const { name, link, isLiked } = props.card;
+export default function Card({card, onOpenPopup}) {
+  const { name, link, isLiked } = card;
+
+  const imageComponent = {
+    title: null,
+    children: <ImagePopup card= {card} />,
+  };
 
   return (
     <li className="card">
       <div className="card__image-container">
-        <img className="card__image" src={link} alt={`Imagem de ${name}`} />
+        <img className="card__image" src={link} alt={name}
+        onClick= {() => onOpenPopup(imageComponent)} />
         <button
           className="card__delete-button"
           aria-label="Excluir card"

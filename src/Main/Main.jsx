@@ -89,11 +89,11 @@ export default function Main() {
         </button>
       </section>
 
-      {/* Aqui renderiza os cards */}
+      
       <section className="elements">
         <ul className="cards__list">
           {cards.map((card) => (
-            <Card key={card._id} card={card} />
+            <Card key={card._id} card={card}  onOpenPopup={handleOpenPopup}/>
           ))}
         </ul>
       </section>
