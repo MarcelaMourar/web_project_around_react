@@ -6,6 +6,7 @@ export default function Card({card, onOpenPopup}) {
   const imageComponent = {
     title: null,
     children: <ImagePopup card= {card} />,
+    type: "image"
   };
 
   return (

@@ -1,12 +1,30 @@
+.cards__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,282px);
+    justify-items: center;
+ gap: 21px 17px;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 0 200px auto;
+  gap: 17px 21px;
+  align-items: start;
+  max-width: 880px;
+  height: 100%;
+}
 
-
-.element {
+.card {
   width: 100%;
   position: relative;
 }
 
-.element__image {
+.card__image {
   max-width: 282px;
   height: 361px;
   width: 100%;
@@ -17,19 +35,18 @@
   cursor: pointer;
 }
 
-.element__info {
+.card__description {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   background: rgba(255, 255, 255, 1);
-  border-radius: 4px;
+  border-radius: 0 0 10px 10px;
   width: 100%;
   position: relative;
   height: 60px;
 }
 
-.element__title {
-  border-radius: 4px;
+.card__title {
   background: rgba(255, 255, 255, 1);
   color: rgba(0, 0, 0, 1);
   padding: 10px 15px;
@@ -41,38 +58,41 @@
   text-overflow: ellipsis;
 }
 
-.element__heart {
-  color: rgba(0, 0, 0, 1);
+.card__like-button {
   width: 21px;
   height: 19px;
   cursor: pointer;
   justify-self: end;
   margin-right: 15px;
+  border: none;
+  background: transparent;
 }
 
-.element__heart:hover {
+.card__like-button:hover {
   opacity: 0.6;
 }
 
-.element__heart.active {
+.card__like-button_active {
   opacity: 1;
 }
 
-.element__trash {
+.card__delete-button {
   width: 18px;
   position: absolute;
   top: 18px;
   right: 15px;
   cursor: pointer;
   z-index: 1;
+  border: none;
+  background: transparent;
 }
 
-.element__trash:hover {
+.card__delete-button:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 880px) {
-  .elements {
+  .cards {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     max-width: 100%;
@@ -80,27 +100,27 @@
     padding: 0 30px;
   }
 
-  .element {
+  .card {
     width: 100%;
   }
 
-  .element__image {
+  .card__image {
     max-width: 100%;
   }
 
-  .element__info {
+  .card__description {
     height: auto;
     padding: 0;
   }
 
-  .element__title {
+  .card__title {
     font-size: 20px;
     padding: 20px;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .elements {
+  .cards {
     grid-template-columns: 1fr;
     margin: 0 auto;
   }

@@ -133,8 +133,9 @@
   position: absolute;
   top: -40px;
   right: -40px;
-  border-radius: 50%;
   cursor: pointer;
+  background: transparent; 
+  border: none;
 }
 
 #popup-avatar .popup__container {

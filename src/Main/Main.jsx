@@ -99,7 +99,7 @@ export default function Main() {
       </section>
 
       {popup && (
-        <Popup onClose={handleClosePopup} title={popup.title}>
+        <Popup onClose={handleClosePopup} title={popup.title} type={popup.type} >
           {popup.children}
         </Popup>
       )}
