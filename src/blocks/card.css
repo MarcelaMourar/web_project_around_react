@@ -13,10 +13,11 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   margin: 0 200px auto;
-  gap: 17px 21px;
   align-items: start;
   max-width: 880px;
   height: 100%;
+  list-style-type: none;
+  gap: 21px 17px;
 }
 
 .card {

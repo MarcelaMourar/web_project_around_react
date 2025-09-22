@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import closeIcon from "../../../images/CloseIcon.png";
 
 
+
 export default function Popup({ title, children, onClose, type }) {
  
   useEffect(() => {

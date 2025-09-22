@@ -1,5 +1,6 @@
 import ImagePopup from "../Popup/ImagePopup/ImagePopup";
 
+
 export default function Card({card, onOpenPopup}) {
   const { name, link, isLiked } = card;
 

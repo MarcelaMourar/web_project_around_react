@@ -1,8 +1,7 @@
 export default function EditProfile() {
   return (
     <form className="popup__form" id="form-edit-profile" noValidate>
-      <label className="popup__field">
-        <input
+             <input
           type="text"
           className="popup__input popup__input_name"
           placeholder="Nome"
@@ -12,9 +11,7 @@ export default function EditProfile() {
           name="name"
         />
         <span className="popup__error" id="profile_perfil-error"></span>
-      </label>
-
-      <label className="popup__field">
+     
         <input
           type="text"
           className="popup__input popup__input_job"
@@ -25,9 +22,9 @@ export default function EditProfile() {
           name="job"
         />
         <span className="popup__error" id="profile__text-error"></span>
-      </label>
+      
 
-      <button type="submit" className="button popup__button">
+      <button type="submit" className="popup__save-button popup__button_disabled">
         Salvar
       </button>
     </form>

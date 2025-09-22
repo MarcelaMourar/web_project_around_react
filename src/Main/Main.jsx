@@ -91,7 +91,7 @@ export default function Main() {
 
       
       <section className="elements">
-        <ul className="cards__list">
+        <ul className="cards">
           {cards.map((card) => (
             <Card key={card._id} card={card}  onOpenPopup={handleOpenPopup}/>
           ))}

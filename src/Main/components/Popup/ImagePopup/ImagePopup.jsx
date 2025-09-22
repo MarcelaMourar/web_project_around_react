@@ -6,7 +6,7 @@ export default function ImagePopup({ card }) {
       <img
         src={card.link}
         alt={card.name}
-        className="popup__image"
+        className="popup__img"
       />
       <p className="popup__caption">{card.name}</p>
     </div>
