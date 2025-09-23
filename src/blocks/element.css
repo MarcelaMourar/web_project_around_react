@@ -48,7 +48,10 @@
   cursor: pointer;
   justify-self: end;
   margin-right: 15px;
-}
+  background-size: contain;
+  border: none;
+background-color: transparent;
+ }
 
 .element__heart:hover {
   opacity: 0.6;
@@ -65,7 +68,16 @@
   right: 15px;
   cursor: pointer;
   z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; 
+  border: none;
+  height: 20px;  
 }
+
+
+
 
 .element__trash:hover {
   opacity: 0.6;
