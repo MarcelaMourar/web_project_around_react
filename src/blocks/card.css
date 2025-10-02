@@ -1,0 +1,128 @@
+.cards__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,282px);
+    justify-items: center;
+ gap: 21px 17px;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 0 200px auto;
+  align-items: start;
+  max-width: 880px;
+  height: 100%;
+  list-style-type: none;
+  gap: 21px 17px;
+}
+
+.card {
+  width: 100%;
+  position: relative;
+}
+
+.card__image {
+  max-width: 282px;
+  height: 361px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+.card__description {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  position: relative;
+  height: 60px;
+}
+
+.card__title {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  padding: 10px 15px;
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__like-button {
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+  justify-self: end;
+  margin-right: 15px;
+  border: none;
+  background: transparent;
+}
+
+.card__like-button:hover {
+  opacity: 0.6;
+}
+
+.card__like-button_active {
+  opacity: 1;
+}
+
+.card__delete-button {
+  width: 18px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+  background: transparent;
+}
+
+.card__delete-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 880px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 100%;
+    margin: 0 10px auto;
+    padding: 0 30px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card__image {
+    max-width: 100%;
+  }
+
+  .card__description {
+    height: auto;
+    padding: 0;
+  }
+
+  .card__title {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cards {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+}

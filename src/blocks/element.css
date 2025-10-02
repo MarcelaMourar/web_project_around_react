@@ -1,0 +1,115 @@
+.element {
+  width: 100%;
+  position: relative;
+}
+
+.element__image {
+  max-width: 282px;
+  height: 361px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+.element__info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  height: 60px;
+}
+
+.element__title {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  padding: 10px 15px;
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.element__heart {
+  background-image: url(../images/coração.png);
+  color: rgba(0, 0, 0, 1);
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+  justify-self: end;
+  margin-right: 15px;
+  background-size: contain;
+  border: none;
+background-color: transparent;
+ }
+
+.element__heart:hover {
+  opacity: 0.6;
+}
+
+.element__heart.active {
+  background-image: url(../images/Union.png);
+ 
+}
+
+.element__trash {
+  width: 18px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent; 
+  border: none;
+  height: 20px;  
+}
+
+.element__trash:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 880px) {
+  .elements {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 100%;
+    margin: 0 10px auto;
+    padding: 0 30px;
+  }
+
+  .element {
+    width: 100%;
+  }
+
+  .element__image {
+    max-width: 100%;
+  }
+
+  .element__info {
+    height: auto;
+    padding: 0;
+  }
+
+  .element__title {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .elements {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+}
