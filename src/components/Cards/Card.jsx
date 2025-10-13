@@ -3,12 +3,10 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ImagePopup from "../ImagePopup/ImagePopup";
 import lixeira from "../../images/lixeira.png";
 
-
-export default function Card({ card, onOpenPopup, onDeleteCard,onCardLike }) {
+export default function Card({ card, onOpenPopup, onDeleteCard,onCardLike, removeCardPopup }) {
   const currentUser = useContext(CurrentUserContext);  
    const isLiked = card.isLiked;
   const cardLikeButtonClassName = `element__heart ${isLiked ? "active" : ""}`;
-
 
  function handleCardLike() {
  onCardLike(card)};
@@ -16,7 +14,6 @@ export default function Card({ card, onOpenPopup, onDeleteCard,onCardLike }) {
  function handleDeleteClick() {
   onDeleteCard?.(card);
 }
-
 
   const imageComponent = {
     title: null,
@@ -38,8 +35,8 @@ export default function Card({ card, onOpenPopup, onDeleteCard,onCardLike }) {
           aria-label="Excluir card"
           type="button"
           style={{ backgroundImage: `url(${lixeira})` }}
-          onClick={handleDeleteClick}
-        />
+           onClick={() => onOpenPopup(removeCardPopup(card))} 
+           />
       </div>
 
       <div className="element__info">

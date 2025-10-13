@@ -1,16 +1,24 @@
 import { useState } from "react";
 
-export default function NewCard({ onAddPlaceSubmit }) {
+export default function NewCard({ onAddPlaceSubmit, onClose }) {
 const [name, setName] = useState("");
 const [link, setLink] = useState ("");
+const [isSubmitting, setIsSubmitting] = useState(false);
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
-  onAddPlaceSubmit({name,link});
+  setIsSubmitting(true);
+  try{
+    await onAddPlaceSubmit({name,link});
+    setName("");
+    setLink("");
+
+if (onClose) onClose();
+  }  catch (err) {
+    console.error("Erro ao adicionar card:",err);
+  } finally {setIsSubmitting(false);}
+ 
 };
-
-
-
 
   return (
     <form
@@ -49,9 +57,9 @@ const handleSubmit = (e) => {
         <span className="popup__error" id="card-link-error"></span>
       
 
-      <button className="popup__save-button" type="submit">
-        Salvar
-      </button>
+      <button className="popup__save-button" type="submit"  disabled={isSubmitting}>
+         {isSubmitting ? "Salvando..." : "Salvar"}
+          </button>
     </form>
   );
 }

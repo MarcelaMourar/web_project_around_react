@@ -1,67 +1,40 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import Popup from "../Popup/Popup.jsx";
 import NewCard from "../NewCard/NewCard.jsx";
 import EditProfile from "../EditProfile/EditProfile.jsx";
 import EditAvatar from "../EditAvatar/EditAvatar.jsx";
 import caneta from "../../images/caneta.png";
 import vector from "../../images/Vector(1).png";
-import api from "../../utils/api.js";
-import Card from "../Cards/Cards.jsx"
+import Card from "../Cards/Card.jsx"
+import RemoveCard from "../removeCard/RemoveCard.jsx";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
-export default function Main({ onOpenPopup, onClosePopup, popup }) {
+export default function Main({
+   onOpenPopup,
+  onClosePopup,
+  popup,
+  onCardLike,
+  onCardDelete,
+  onAddPlaceSubmit,
+  cards,
+   }) {
   const { currentUser } = useContext(CurrentUserContext); 
-  const [cards, setCards] = useState([]);
-
-  const handleAddPlaceSubmit = async (data) => {
-  try {
-    const newCard = await api.createCard(data);
-    setCards ([newCard, ...cards]);
-    handleClosePopup();
-    } catch (err) {
-      console.error("Erro ao adicionar card:", err);
-    }
-};
-  
-  const newCardPopup = { title: "Novo Card", children: <NewCard onAddPlaceSubmit={handleAddPlaceSubmit} /> };
+ const newCardPopup = { title: "Novo Card", children: <NewCard onAddPlaceSubmit={onAddPlaceSubmit} /> };
   const editProfilePopup = { title: "Editar Perfil", children: <EditProfile /> };
   const editAvatarPopup = { title: "Alterar Avatar", children: <EditAvatar /> };
-
-  useEffect(() => {
-  api.getUserInfo()
-    .then(() => api.getInitialCards())
-    .then((cardsFromServer) => {
-      setCards(cardsFromServer.reverse());
-
-      console.log("Links dos cards:");
-      cardsFromServer.forEach(card => console.log(card.link)); // aqui dentro
-    })
-    .catch((err) => console.error("Erro ao carregar dados:", err));
-}, []);
+const removeCardPopup = (card) => ({
+  title: "",
+  children: (
+    <RemoveCard
+      onConfirm={() => onCardDelete(card)}
+      onClose={onClosePopup}
+    />
+  ),
+});
 
 
-  
-  async function handleCardLike(card) {
-    try {
-      const newCard = await api.changeLikeCardStatus(card._id, !card.isLiked);
-      setCards((state) =>
-        state.map((c) => (c._id === card._id ? newCard : c))
-      );
-    } catch (error) {
-      console.error("Erro ao curtir/descurtir o card:", error);
-    }
-  }
 
  
-  async function handleCardDelete(card) {
-    try {
-      await api.deleteCard(card._id);
-      setCards((state) => state.filter((c) => c._id !== card._id));
-    } catch (error) {
-      console.error("Erro ao excluir o card:", error);
-    }
-  }
-
   return (
     <main className="content">
       <section className="profile">
@@ -108,15 +81,15 @@ export default function Main({ onOpenPopup, onClosePopup, popup }) {
               key={card._id}
               card={card}
               onOpenPopup={onOpenPopup}
-              onDeleteCard={handleCardDelete}
-              onCardLike={handleCardLike}
+              onDeleteCard={onCardDelete}
+               removeCardPopup={removeCardPopup}
+              onCardLike={onCardLike}
               currentUserId={currentUser._id}
             />
           ))}
         </ul>
       </section>
-
-     
+  
       {popup && (
         <Popup onClose={onClosePopup} title={popup.title} type={popup.type}>
           {popup.children}
