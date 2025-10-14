@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import closeIcon from "../../images/CloseIcon.png";
 
-
-
-export default function Popup({ title, children, onClose, type }) {
+export default function Popup({ title, children, onClose, type,className = ""  }) {
  
   useEffect(() => {
     function handleEsc(e) {
@@ -25,9 +23,9 @@ export default function Popup({ title, children, onClose, type }) {
   return (
     <div className="popup" onMouseDown={handleOverlayClick}>
       <div
-        className={`popup__container ${
-          type === "image" ? "popup__container_img" : ""
-        }`}
+        className={`popup__container 
+          ${type === "image" ? "popup__container_img" : ""} 
+          ${className}`}
       >
         <button
           aria-label="Fechar modal"
@@ -40,6 +38,7 @@ export default function Popup({ title, children, onClose, type }) {
 
         {title && <h3 className="popup__title">{title}</h3>}
         {children}
+        
       </div>
     </div>
   );

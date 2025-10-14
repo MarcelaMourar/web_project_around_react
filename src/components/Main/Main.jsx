@@ -24,6 +24,7 @@ export default function Main({
   const editAvatarPopup = { title: "Alterar Avatar", children: <EditAvatar /> };
 const removeCardPopup = (card) => ({
   title: "",
+   className: "popup__container popup__container_delete",
   children: (
     <RemoveCard
       onConfirm={() => onCardDelete(card)}
@@ -33,8 +34,6 @@ const removeCardPopup = (card) => ({
 });
 
 
-
- 
   return (
     <main className="content">
       <section className="profile">
@@ -91,10 +90,16 @@ const removeCardPopup = (card) => ({
       </section>
   
       {popup && (
-        <Popup onClose={onClosePopup} title={popup.title} type={popup.type}>
-          {popup.children}
-        </Popup>
-      )}
+  <Popup
+    onClose={onClosePopup}
+    title={popup.title}
+    type={popup.type}
+    className={popup.className}
+  >
+    {popup.children}
+  </Popup>
+)}
+
     </main>
   );
 }

@@ -17,12 +17,7 @@ export default function RemoveCard({ onConfirm, onClose }) {
 
 return (
   <>
-    <img
-      src="./imagens/CloseIcon.png"
-      alt="Fechar"
-      className="popup__close-icon"
-      onClick={onClose}
-    />
+    
     <h2 className="popup__title">Tem certeza?</h2>
     <button
       type="button"

@@ -10,9 +10,7 @@
   bottom: 0;
   left: 0;
   z-index: 10;
-
 }
-
 
 .popup__title {
   font-weight: 900;
@@ -62,7 +60,7 @@
   width: 100px;
 }
 
-.popup__city-name {
+.popup__caption {
   position: absolute;
   top: 100%;
 }
@@ -94,13 +92,13 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 25px;
-  width: 100%;
-  padding: 10px 0;
+   width: 120%;
+   padding: 10px 0;
 }
 .popup__input_job {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  width: 100%;
+   width: 120%;
   padding: 10px 0;
 }
 .popup__save-button {
@@ -113,7 +111,7 @@
   border: none;
   padding: 12px;
   text-align: center;
-  margin: 85px 36px auto 36px;
+  margin: 86px 20px auto 20px;
   cursor: pointer;
 }
 
