@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ImagePopup from "../ImagePopup/ImagePopup";
 import lixeira from "../../images/lixeira.png";
