@@ -62,7 +62,7 @@ npm run dev
 A aplicação estará disponível em:
 
 ```text
-http://localhost:5173
+[http://localhost:3000](http://localhost:3000)
 ```
 
 > A porta pode variar dependendo da configuração do projeto.
