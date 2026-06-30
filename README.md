@@ -35,13 +35,13 @@ The goal of this project was to practice fundamental concepts of modern front-en
 ### 1. Clone the repository
 
 ```bash
-https://github.com/MarcelaMourar/web_project_around_react.git
+git clone https://github.com/MarcelaMourar/around-us-react.git
 ```
 
 ### 2.Go to the project folder
 
 ```bash
-cd web_project_around_react
+cd around-us-react
 ```
 
 ### 3. Install dependencies
